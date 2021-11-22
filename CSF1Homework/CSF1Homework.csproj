@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FruitLoops.cs" />
+    <Compile Include="Fruit_Loops2.cs" />
     <Compile Include="MadLib.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
