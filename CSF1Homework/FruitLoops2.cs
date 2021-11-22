@@ -10,6 +10,7 @@ namespace CSF1Homework
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Fruit Loops Pt 2");
             string[] fruit = { "apple", "banana", "kiwi", "pineapple", "lemon", "lime" };
             string dots = "";
             for (int i = 0; i < fruit.Length; i++)
