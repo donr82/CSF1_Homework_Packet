@@ -47,56 +47,60 @@ namespace CSF1Homework
             do
             {
 
-                Console.WriteLine(@"Do you have a temperature you want to convert?: 
-1) Yes
-2) No
-");
-                string userResponse = Console.ReadLine().ToLower();
+
                 Console.Clear();
-                switch (userResponse)
-                {
-
-                    case "1":
-                    case "yes":
-                    case "y":
-                        Console.WriteLine("Please give me a temperature: ");
-                        int temperature = int.Parse(Console.ReadLine());
-                        Console.WriteLine(@" How would you like to convert this? 
-1) Fahrenheit
-2) Celsius
+                Console.WriteLine("Welcome to Temperature Conversion!");
+                Console.WriteLine("Please give me a temperature: ");
+                int temperature = int.Parse(Console.ReadLine());
+                Console.WriteLine(@" How would you like to convert this? 
+1) Celsius to Fahrenheit
+2) Fahrenheit to Celsius
 ");
-                        string userChoice = Console.ReadLine().ToLower();
-                        Console.Clear();
-                        switch (userChoice)
+                string userChoice = Console.ReadLine().ToLower();
+                Console.Clear();
+                switch (userChoice)
+                {
+                    case "1":
+                    case "f":
+                    case "fahrenheit":
+                        Console.WriteLine("That temperature in Fahrenheit is: " + (temperature * (9.0 / 5.0) + 32) + "\u00B0F");
+                        Console.WriteLine("Do you have more temperatures you want to convert?: Y/N");
+                        string userAnswer = Console.ReadLine().ToLower();
+                        if (userAnswer == "y")
                         {
-                            case "1":
-                            case "f":
-                            case "fahrenheit":
-                                Console.WriteLine("That temperature in Fahrenheit is: " + (temperature * (9.0 / 5.0) + 32) + "\u00B0F");
-                                break;
-
-                            case "2":
-                            case "c":
-                            case "celsius":
-                                Console.WriteLine("That temperature in Celsius is: " + (celsius - 32 / (9.0 / 5.0)) + "\u00B0C");
-                                break;
-
-                            default:
-                                Console.WriteLine("That was not a valid option");
-                                break;
-                        }//end switch
+                            continue;
+                        }
+                        else if (userAnswer == "n")
+                        {
+                            break;
+                        }
                         break;
+
+
                     case "2":
-                    case "no":
-                    case "n":
-                        Console.WriteLine("Thank you for converting temperatures with me.");
-                        repeat = false;
+                    case "c":
+                    case "celsius":
+                        Console.WriteLine("That temperature in Celsius is: " + (celsius - 32 / (9.0 / 5.0)) + "\u00B0C");
+                        Console.WriteLine("Do you have more temperatures you want to convert?: Y/N");
+                        string userAnswer2 = Console.ReadLine().ToLower();
+                        if (userAnswer2 == "y")
+                        {
+                            continue;
+                        }
+                        else if (userAnswer2 == "n")
+                        {
+                            break;
+                        }
                         break;
-                    default:
-                        break;
-                }//end switch             
-            } while (repeat);
 
+                    default:
+                        Console.WriteLine("That was not a valid option");
+                        break;
+                }//end switch
+                break;
+
+            } while (repeat);
+            Console.WriteLine("Thank you for converting with us!");
 
         }//end svm
     }//end class

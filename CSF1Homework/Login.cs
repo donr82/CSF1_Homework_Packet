@@ -46,31 +46,38 @@ namespace CSF1Homework
                 if (userResp == username)
                 {
                     Console.WriteLine("Access Granted\n");
-                    
 
-                    for (int passwordAttempts = 0; passwordAttempts < 3; ++passwordAttempts)
+
+                    for (int passwordAttempt = 0; passwordAttempt < 3; ++passwordAttempt)
                     {
                         Console.WriteLine("Please Enter Password: ");
                         string userResp2 = Console.ReadLine();
-                        if (userResp2 != password)
-                        {
-                            Console.WriteLine("Access Denied");
-                            
-                        }//end if
-                        else
+                        if (userResp2 == password)
                         {
                             Console.WriteLine("Access Granted");
                             return;
+                        }//end if
+
+                        else if (userResp2 != password)
+                        {
+                            Console.WriteLine("Access Denied");
+                            
                         }//end else
+                        else
+                        {
+                            Console.WriteLine("Youre Account has been locked.");
+                        }
+                        
                     }//end for
+                    return;
                 }//end if
                 else
                 {
                     Console.WriteLine("Access Denied");
-                    
+
                 }//end else
             }//end for           
-
+            
         }//end svm
     }//end class
 }//end namespace
