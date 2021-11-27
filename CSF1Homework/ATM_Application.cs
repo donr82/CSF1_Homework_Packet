@@ -97,18 +97,7 @@ namespace CSF1Homework
                                         Console.Clear();
                                         Console.WriteLine("How much would you like to Deposit?: ");
                                         decimal depAmt = decimal.Parse(Console.ReadLine());
-                                        Console.WriteLine($"{depAmt:c} has been deposited into account number {accountNumbr}. Current balance is now {depAmt += balance:c}");
-                                        Console.WriteLine("Would you like to make another transaction?: Y/N");
-                                        string userAnswer = Console.ReadLine().ToLower();
-                                        if (userAnswer == "y")
-                                        {
-                                            continue;
-                                        }
-                                        else if (userAnswer == "n")
-                                        {
-                                            Console.WriteLine("Thank you for banking with us!");
-                                            return;
-                                        }
+                                        Console.WriteLine($"{depAmt:c} has been deposited into account number {accountNumbr}. Current balance is now {balance += depAmt:c}");        
                                         break;
 
                                     case "2":
@@ -123,18 +112,7 @@ namespace CSF1Homework
                                         }
                                         else
                                         {
-                                            Console.WriteLine($"{withdAmt:c} has been withdrawn from account number {accountNumbr}. Current balance is now {withdAmt -= balance:c}");
-                                        }
-                                        Console.WriteLine("\nWould you like to make another transaction?: Y/N");
-                                        string userAnswer2 = Console.ReadLine().ToLower();
-                                        if (userAnswer2 == "y")
-                                        {
-                                            continue;
-                                        }
-                                        else if (userAnswer2 == "n")
-                                        {
-                                            Console.WriteLine("Thank you for banking with us!");
-                                            return;
+                                            Console.WriteLine($"{withdAmt:c} has been withdrawn from account number {accountNumbr}. Current balance is now {balance -= withdAmt:c}");
                                         }
                                         break;
 
@@ -144,17 +122,6 @@ namespace CSF1Homework
                                     case "balance request":
                                         Console.Clear();
                                         Console.WriteLine($"Your current balance is {balance:c}");
-                                        Console.WriteLine("Would you like to make another transaction?: Y/N");
-                                        string userAnswer3 = Console.ReadLine().ToLower();
-                                        if (userAnswer3 == "y")
-                                        {
-                                            continue;
-                                        }
-                                        else if (userAnswer3 == "n")
-                                        {
-                                            Console.WriteLine("Thank you for banking with us!");
-                                            return;
-                                        }
                                         break;
 
                                     case "4":
@@ -168,6 +135,17 @@ namespace CSF1Homework
                                         break;
                                 }//end switch
 
+                                Console.WriteLine("Would you like to make another transaction?: Y/N");
+                                string userAnswer = Console.ReadLine().ToLower();
+                                if (userAnswer == "y")
+                                {
+                                    continue;
+                                }
+                                else if (userAnswer == "n")
+                                {
+                                    Console.WriteLine("Thank you for banking with us!");
+                                    return;
+                                }
                             } while (repeat);
 
                         }//end if

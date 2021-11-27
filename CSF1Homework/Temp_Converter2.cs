@@ -36,20 +36,20 @@ namespace CSF1Homework
 
             Console.Write("Please give me a temperature in Celsius: ");
             int fahrenheit = int.Parse(Console.ReadLine());
-            Console.WriteLine("That temperature in Fahrenheit is: " + (fahrenheit * (9.0 / 5.0) + 32));
+            Console.WriteLine("That temperature in Fahrenheit is: " + (fahrenheit * (9.0 / 5.0) + 32) + "\u00B0F");
 
             Console.Write("Please give me a temperaure in Fahrenheit: ");
             int celsius = int.Parse(Console.ReadLine());
-            Console.WriteLine("That temperature in Celsius is: " + (celsius - 32 / (9.0 / 5.0)));
+            Console.WriteLine("That temperature in Celsius is: " + (celsius - 32 / (9.0 / 5.0)) + "\u00B0C");
 
-
+            
             bool repeat = true;
             do
             {
 
 
-                Console.Clear();
-                Console.WriteLine("Welcome to Temperature Conversion!");
+                
+                Console.WriteLine("\n\nWelcome to Temperature Conversion!");
                 Console.WriteLine("Please give me a temperature: ");
                 int temperature = int.Parse(Console.ReadLine());
                 Console.WriteLine(@" How would you like to convert this? 
